@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './Gamepage.module.css';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
 import Results from '../Results/Results';
+import GameBoard from '../GameBoard/GameBoard';
 
 class Gamepage extends Component {
   state = {
@@ -9,37 +10,39 @@ class Gamepage extends Component {
     player2Score: 0,
     ties: 0,
     gameOver: false,
-    winner: '',
+    winner: 'Test',
+    board: [0, 1, 2, 3, 4, 5, 6, 7, 8],
   };
+
+  newGameHandler = () => {
+    this.setState({
+      gameOver: false,
+      board: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    });
+  };
+
   render() {
     return (
       <div className={classes.container}>
         <button className={classes.homeButton} onClick={this.props.endGame}>
           ← Home
         </button>
-        <ScoreBoard
-          p1Name={this.props.player1Name}
-          p2Name={this.props.player2Name}
-          p1Score={this.state.player1Score}
-          p2Score={this.state.player2Score}
-          ties={this.state.ties}
-        />
-        {this.props.gameOver ? <Results winner={this.state.winner} /> : null}
-        <div className='board-container'>
-          <div className='board'>
-            <div className='grid-cell' data-position='0'></div>
-            <div className='grid-cell' data-position='1'></div>
-            <div className='grid-cell' data-position='2'></div>
-            <div className='grid-cell' data-position='3'></div>
-            <div className='grid-cell' data-position='4'></div>
-            <div className='grid-cell' data-position='5'></div>
-            <div className='grid-cell' data-position='6'></div>
-            <div className='grid-cell' data-position='7'></div>
-            <div className='grid-cell' data-position='8'></div>
-          </div>
-        </div>
-        <div className='button-container'>
-          <button className='newgame-button'>New Game</button>
+        {this.state.gameOver ? (
+          <Results winner={this.state.winner} />
+        ) : (
+          <ScoreBoard
+            p1Name={this.props.player1Name}
+            p2Name={this.props.player2Name}
+            p1Score={this.state.player1Score}
+            p2Score={this.state.player2Score}
+            ties={this.state.ties}
+          />
+        )}
+        <GameBoard />
+        <div className={classes.buttonContainer}>
+          <button className={classes.newGame} onClick={this.newGameHandler}>
+            New Game
+          </button>
         </div>
       </div>
     );

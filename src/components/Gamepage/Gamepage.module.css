@@ -27,3 +27,17 @@
   padding: 10px;
   border-radius: 5px;
 }
+
+.buttonContainer {
+  position: absolute;
+  bottom: 5px;
+}
+
+.newGame {
+  background-color: #ff617c;
+  border: 1px solid #ff617c;
+  font-size: 1.1rem;
+  font-family: 'Fredoka One', cursive;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+}
