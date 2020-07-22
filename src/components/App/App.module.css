@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to left, #4a8cff 0%, #70daff 100%);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,25 @@
+.one,
+.two {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ffc4d7;
+  border-radius: 3px;
+  border: 1px solid #ffc4d7;
+  margin-left: 1px;
+}
+
+.one {
+  background-image: url('../../assets/onePlayer.svg');
+}
+
+.two {
+  background-image: url('../../assets/twoPlayer.svg');
+}
+
+.one.active,
+.two.active {
+  background-color: #ff617c;
+  border: 1px solid #ff617c;
+}
