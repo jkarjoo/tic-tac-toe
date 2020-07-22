@@ -24,4 +24,6 @@
   border: 2px solid black;
   font-size: 4.5rem;
   cursor: pointer;
+  background-color: rgb(155, 209, 255);
+  font-family: 'Fredoka One', cursive;
 }
