@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 650px;
+  width: 90vw;
+  height: 550px;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 5px 10px 20px black;
+  font-family: 'Fredoka One', cursive;
+}
+
+.homeButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff617c;
+  border: 1px solid #ff617c;
+  font-size: 1.1rem;
+  font-family: 'Fredoka One', cursive;
+  padding: 10px;
+  border-radius: 5px;
+}
