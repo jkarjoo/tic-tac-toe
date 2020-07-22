@@ -49,7 +49,7 @@ class Gamepage extends Component {
       });
       if (counter === 3) {
         winner = player;
-        console.log(winner);
+        this.renderWin(winner);
       }
     });
     if (this.state.cellsFilled === 9 && winner == null) {
@@ -61,21 +61,25 @@ class Gamepage extends Component {
     this.setState((prevState) => {
       return {
         gameOver: true,
+        playerTurn: 'player1',
         ties: prevState.ties + 1,
         resultText: "It's a draw!",
       };
     });
   };
 
-  // renderWin = (name) => {
-  //   this.setState((prevState) => {
-  //     return {
-  //       gameOver: true,
-  //       ties: prevState.ties + 1,
-  //       resultText: "It's a draw!",
-  //     };
-  //   });
-  // };
+  renderWin = (player) => {
+    let name = player === 'player1' ? this.props.player1Name : this.props.player2Name;
+    let field = player + 'Score';
+    this.setState((prevState) => {
+      return {
+        gameOver: true,
+        playerTurn: 'player1',
+        [field]: prevState[field] + 1,
+        resultText: `${name} wins!`,
+      };
+    });
+  };
 
   getPlayerSymbol() {
     return this.state.playerTurn === 'player1' ? 'X' : 'O';
@@ -118,6 +122,7 @@ class Gamepage extends Component {
             p1Score={this.state.player1Score}
             p2Score={this.state.player2Score}
             ties={this.state.ties}
+            turn={this.state.playerTurn}
           />
         )}
         <GameBoard placeMove={this.placeMove} board={this.state.board} />

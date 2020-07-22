@@ -17,8 +17,7 @@
   background-color: #a98eff;
 }
 
-.playerContainer.turn,
-.player2Container.turn {
+.turn {
   background-color: #8f6bff;
   border: 4px solid black;
 }
