@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.module.css';
 import Homepage from '../Homepage/Homepage';
+import Gamepage from '../Gamepage/Gamepage';
 
 class App extends Component {
   state = {
@@ -18,6 +19,8 @@ class App extends Component {
 
   startGame = () => {
     this.setState({
+      player1Name: this.state.player1Name || 'Player1',
+      player2Name: !this.state.twoPlayer ? 'AI' : this.state.player2Name || 'Player2',
       gameStarted: true,
     });
   };
@@ -30,18 +33,22 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        {this.state.gameStarted ? (
-          <h1>Started</h1>
-        ) : (
-          <Homepage
-            twoPlayer={this.state.twoPlayer}
-            handleButtonClick={this.handleButtonClick}
-            startGame={this.startGame}
-            updateName={this.updateName}
-          />
-        )}
-      </React.Fragment>
+      <div>
+        <React.Fragment>
+          {this.state.gameStarted ? (
+            <Gamepage />
+          ) : (
+            <Homepage
+              twoPlayer={this.state.twoPlayer}
+              handleButtonClick={this.handleButtonClick}
+              startGame={this.startGame}
+              updateName={this.updateName}
+            />
+          )}
+        </React.Fragment>
+        <p>{this.state.player1Name}</p>
+        <p>{this.state.player2Name}</p>
+      </div>
     );
   }
 }
