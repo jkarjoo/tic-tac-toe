@@ -3,17 +3,19 @@ import classes from './Homepage.module.css';
 import PlayerButtons from '../PlayerButtons/PlayerButtons';
 import PlayerInputs from '../PlayerInputs/PlayerInputs';
 
-function Homepage() {
+function Homepage(props) {
   return (
     <div className={classes.home}>
       <div className={classes.title}>Tic Tac Toe</div>
       <div className={classes.buttons}>
         <span className={classes.choices}>Players</span>
-        <PlayerButtons />
+        <PlayerButtons twoPlayer={props.twoPlayer} handleClick={props.handleButtonClick} />
       </div>
-      <PlayerInputs />
+      <PlayerInputs show={props.twoPlayer} updateName={props.updateName} />
       <div className={classes.playButton}>
-        <button className={classes.play}>PLAY</button>
+        <button className={classes.play} onClick={props.startGame}>
+          PLAY
+        </button>
       </div>
     </div>
   );
