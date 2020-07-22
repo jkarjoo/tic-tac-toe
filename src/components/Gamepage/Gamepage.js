@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import classes from './Gamepage.module.css';
 import ScoreBoard from '../ScoreBoard/ScoreBoard';
+import Results from '../Results/Results';
 
 class Gamepage extends Component {
   state = {
     player1Score: 0,
     player2Score: 0,
     ties: 0,
+    gameOver: false,
+    winner: '',
   };
   render() {
     return (
@@ -21,9 +24,7 @@ class Gamepage extends Component {
           p2Score={this.state.player2Score}
           ties={this.state.ties}
         />
-        <div className='results-container'>
-          <div className='results-banner'></div>
-        </div>
+        {this.props.gameOver ? <Results winner={this.state.winner} /> : null}
         <div className='board-container'>
           <div className='board'>
             <div className='grid-cell' data-position='0'></div>

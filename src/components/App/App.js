@@ -47,7 +47,6 @@ class App extends Component {
             player1Name={this.state.player1Name}
             player2Name={this.state.player2Name}
             ai={!this.state.twoPlayer}
-            gameOver={!this.state.gameStarted}
             endGame={this.endGame}
           />
         ) : (
