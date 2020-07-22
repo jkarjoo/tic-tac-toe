@@ -1,0 +1,23 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+.player1,
+.player2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+  font-size: 30px;
+}
+
+input {
+  font-size: 18px;
+  padding: 8px;
+  margin-left: 7px;
+  font-family: 'Fredoka One', cursive;
+  width: 100%;
+}

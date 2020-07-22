@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Homepage.module.css';
 import PlayerButtons from '../PlayerButtons/PlayerButtons';
+import PlayerInputs from '../PlayerInputs/PlayerInputs';
 
 function Homepage() {
   return (
@@ -10,6 +11,7 @@ function Homepage() {
         <span className={classes.choices}>Players</span>
         <PlayerButtons />
       </div>
+      <PlayerInputs />
       <div className={classes.playButton}>
         <button className={classes.play}>PLAY</button>
       </div>
