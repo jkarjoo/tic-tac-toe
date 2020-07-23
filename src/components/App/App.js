@@ -6,7 +6,7 @@ import Gamepage from '../Gamepage/Gamepage';
 class App extends Component {
   state = {
     twoPlayer: false,
-    gameStarted: true,
+    gameStarted: false,
     player1Name: '',
     player2Name: '',
   };
