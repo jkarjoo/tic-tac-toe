@@ -18,6 +18,7 @@ class Gamepage extends Component {
     resultText: '',
     aiMoveInProgress: false,
   };
+
   timer = null;
 
   componentWillUnmount = () => {
