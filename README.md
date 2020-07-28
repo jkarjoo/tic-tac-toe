@@ -28,6 +28,7 @@ Here is the working live demo:
 ## Features
 
 - Single & multiplayer mode
+- Unbeatable AI in single player mode
 - Add player names
 - Display scores
 - Display player turns
