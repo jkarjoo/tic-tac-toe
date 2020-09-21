@@ -18,7 +18,7 @@ This is an awesome **_Tic Tac Toe_** game, fully optimized for _desktop_ and _mo
 ## Demo
 
 Here is the working live demo:
-[https://justinkar.github.io/tic-tac-toe/](https://justinkar.github.io/tic-tac-toe/).
+[https://jkarjoo.github.io/tic-tac-toe/](https://jkarjoo.github.io/tic-tac-toe/).
 
 ## Technologies
 
